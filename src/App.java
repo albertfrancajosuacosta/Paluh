@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 public class App extends Application {
     public static void main(String[] args) throws Exception {
+        //System.out.println("oI");
         launch(args);
     }
 
@@ -27,6 +28,7 @@ public class App extends Application {
 
         StackPane root = new StackPane();
         root.getChildren().addAll(botao);
-        primaryStage.setScene(new Scene(root,400,400));
+        primaryStage.setScene(new Scene(root,300,250));
+        primaryStage.show();
     }
 }
