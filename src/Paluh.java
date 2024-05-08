@@ -12,6 +12,13 @@ import javax.swing.KeyStroke;
 import java.awt.event.KeyEvent;
 import java.awt.event.InputEvent;
 
+import javax.swing.JDialog;
+import javax.swing.JFileChooser;
+import java.awt.BorderLayout;
+import java.io.File;
+import javax.swing.event.MenuListener;
+import javax.swing.event.MenuEvent;  
+
 public class Paluh {
 
 	private JFrame frmPaluh;
@@ -24,6 +31,7 @@ public class Paluh {
 			public void run() {
 				try {
 					Paluh window = new Paluh();
+					window.frmPaluh.setLocationRelativeTo(null);
 					window.frmPaluh.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,6 +52,7 @@ public class Paluh {
 	 */
 	private void initialize() {
 		frmPaluh = new JFrame();
+		frmPaluh.setResizable(false);
 		frmPaluh.getContentPane().setBackground(new Color(30, 55, 67));
 		frmPaluh.setBackground(new Color(30, 55, 67));
 		frmPaluh.setSize(new Dimension(1000,900));
@@ -63,6 +72,7 @@ public class Paluh {
 		JMenuItem menuItemArquivo = new JMenuItem("Abrir...");
 		menuItemArquivo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+			
 				
 				System.out.println("Abrir.");
 			}
@@ -81,7 +91,31 @@ public class Paluh {
 		menuArquivo.add(menuItemSair);
 		
 		JMenu menuSobre = new JMenu("Sobre");
+		menuSobre.addMenuListener(new MenuListener() {
+			public void menuCanceled(MenuEvent e) {
+				
+			}
+			
+			public void menuDeselected(MenuEvent e) {
+			
+			}
+			public void menuSelected(MenuEvent e) {
+				System.out.println("dddd");
+				try {
+					DialogSobre dialog = new DialogSobre();
+					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					dialog.setLocationRelativeTo(null);
+					dialog.setVisible(true);
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
+			}
+		});
+		
 		menuSobre.setMnemonic('S');
+		
+		
+		
 		barraMenu.add(menuSobre);
 	}
 
