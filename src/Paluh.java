@@ -19,6 +19,11 @@ import javax.swing.JFileChooser;
 import java.awt.BorderLayout;
 import java.io.File;
 import javax.swing.event.MenuListener;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
+import visão.DialogSobre;
+import visão.PdfView;
+
 import javax.swing.event.MenuEvent;  
 
 public class Paluh {
@@ -54,14 +59,13 @@ public class Paluh {
 	 */
 	private void initialize() {
 		frmPaluh = new JFrame();
-		frmPaluh.setResizable(false);
 		frmPaluh.getContentPane().setBackground(new Color(30, 55, 67));
 		frmPaluh.setBackground(new Color(30, 55, 67));
 		frmPaluh.setSize(new Dimension(1000,900));
 		frmPaluh.setMinimumSize(new Dimension(800, 700));
 		frmPaluh.setMaximumSize(new Dimension(1000, 900));
 		frmPaluh.setTitle("Paluh - Privacidade Aluh");
-		frmPaluh.setBounds(100, 100, 450, 300);
+		//frmPaluh.setBounds(100, 100, 450, 300);
 		frmPaluh.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JMenuBar barraMenu = new JMenuBar();
@@ -75,7 +79,13 @@ public class Paluh {
 		menuItemArquivo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Abrir.");
+
+
 				JFileChooser arquivoAberto = new JFileChooser();
+				
+				FileNameExtensionFilter pdfFiltro = new FileNameExtensionFilter("PDF Documents", "pdf");
+				arquivoAberto.setFileFilter(pdfFiltro);
+			
 				arquivoAberto.setFileSelectionMode(JFileChooser.FILES_ONLY);
 				int i = arquivoAberto.showSaveDialog(null);
 				
@@ -84,6 +94,10 @@ public class Paluh {
 				}else {
 					File arquivoPDF = arquivoAberto.getSelectedFile();
 					System.out.println(arquivoPDF.getPath());
+					
+					
+					PdfView frame = new PdfView();
+					frame.setVisible(true);
 				}
 				
 			}
