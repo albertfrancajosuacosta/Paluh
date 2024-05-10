@@ -6,6 +6,8 @@ import java.awt.Color;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JTextField;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.KeyStroke;
@@ -72,9 +74,18 @@ public class Paluh {
 		JMenuItem menuItemArquivo = new JMenuItem("Abrir...");
 		menuItemArquivo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
-				
 				System.out.println("Abrir.");
+				JFileChooser arquivoAberto = new JFileChooser();
+				arquivoAberto.setFileSelectionMode(JFileChooser.FILES_ONLY);
+				int i = arquivoAberto.showSaveDialog(null);
+				
+				if(i==1) {
+					System.out.println(" Nãda");
+				}else {
+					File arquivoPDF = arquivoAberto.getSelectedFile();
+					System.out.println(arquivoPDF.getPath());
+				}
+				
 			}
 		});
 		menuItemArquivo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, InputEvent.CTRL_DOWN_MASK));
