@@ -32,6 +32,7 @@ import javax.swing.UIManager;
 import javax.swing.JSplitPane;
 import java.awt.Panel;
 import javax.swing.Box;
+import javax.swing.JScrollPane;
 
 public class PdfVisao extends JFrame {
 
@@ -103,6 +104,9 @@ public class PdfVisao extends JFrame {
 				+ "</div>\r\n"
 				+ "</body>\r\n"
 				+ "</html>\r\n";
+		
+		
+		String conteudo1 = "<html><head> </head><body><h1>Oi</h1></body></html>";
 		
 		setBounds(new Rectangle(0, 0, 1000, 800));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -198,13 +202,19 @@ public class PdfVisao extends JFrame {
 
 		
 		JEditorPane documentoVisao = new JEditorPane();
-		documentoVisao.setText(conteudoTexto);
+		documentoVisao.setContentType("text/html");
+		documentoVisao.setText(conteudo1);
 		documentoVisao.setForeground(new Color(0, 0, 0));
 		documentoVisao.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		documentoVisao.setBackground(new Color(211, 211, 211));
 		
 		
-		painelInferior.add(documentoVisao);
+		JScrollPane scrollPane = new JScrollPane(documentoVisao);
+		
+		painelInferior.add(scrollPane);
+		
+		
+		
 		
 		
 		JPanel painelOpcoes = new JPanel();
