@@ -22,9 +22,13 @@ import javax.swing.event.MenuListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import visão.DialogSobre;
-import visão.PdfView;
+import visão.PdfVisao;
 
 import javax.swing.event.MenuEvent;  
+
+
+
+
 
 public class Paluh {
 
@@ -58,7 +62,11 @@ public class Paluh {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
+		
+	
 		frmPaluh = new JFrame();
+		frmPaluh.setVisible(true);
 		frmPaluh.getContentPane().setBackground(new Color(30, 55, 67));
 		frmPaluh.setBackground(new Color(30, 55, 67));
 		frmPaluh.setSize(new Dimension(1000,900));
@@ -96,7 +104,7 @@ public class Paluh {
 					System.out.println(arquivoPDF.getPath());
 					
 					
-					PdfView frame = new PdfView();
+					PdfVisao frame = new PdfVisao();
 					frame.setVisible(true);
 				}
 				
