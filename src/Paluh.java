@@ -89,19 +89,19 @@ public class Paluh {
 				System.out.println("Abrir.");
 
 
-				JFileChooser arquivoAberto = new JFileChooser();
+				//JFileChooser arquivoAberto = new JFileChooser();
 				
-				FileNameExtensionFilter pdfFiltro = new FileNameExtensionFilter("PDF Documents", "pdf");
-				arquivoAberto.setFileFilter(pdfFiltro);
+				//FileNameExtensionFilter pdfFiltro = new FileNameExtensionFilter("PDF Documents", "pdf");
+				//arquivoAberto.setFileFilter(pdfFiltro);
 			
-				arquivoAberto.setFileSelectionMode(JFileChooser.FILES_ONLY);
-				int i = arquivoAberto.showSaveDialog(null);
-				
+				//arquivoAberto.setFileSelectionMode(JFileChooser.FILES_ONLY);
+				//int i = arquivoAberto.showSaveDialog(null);
+				int i = 0;
 				if(i==1) {
 					System.out.println(" Nãda");
 				}else {
-					File arquivoPDF = arquivoAberto.getSelectedFile();
-					System.out.println(arquivoPDF.getPath());
+					//File arquivoPDF = arquivoAberto.getSelectedFile();
+					//System.out.println(arquivoPDF.getPath());
 					
 					
 					PdfVisao frame = new PdfVisao();
