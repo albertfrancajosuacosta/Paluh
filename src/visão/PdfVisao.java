@@ -197,26 +197,26 @@ public class PdfVisao extends JFrame {
 		gbc_painelInferior.gridy = 1;
 		
 		
-		URL url= PdfVisao.class.getResource("/Paluh/src/visão/teste.html");
-	
 		
 		JEditorPane documentoVisao = new JEditorPane();
 		documentoVisao.setContentType("text/html");
-	
+		documentoVisao.setEditable(true);
+		
+		documentoVisao.setForeground(new Color(0, 0, 0));
+		documentoVisao.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		documentoVisao.setBackground(new Color(211, 211, 211));
+		
+		
 		try {
+			
+			System.out.println("file:/C:/Users/alber/Documents/LabMax/Paluh/Teste.html");
+			URL url = new URL("file:/Teste.html");
 			System.out.println(url);
 			documentoVisao.setPage(url);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//documentoVisao.setEditable(true);
-			
-		//documentoVisao.setText(conteudo1);
-		//documentoVisao.setForeground(new Color(0, 0, 0));
-		//documentoVisao.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		documentoVisao.setBackground(new Color(211, 211, 211));
-		
 		
 		JScrollPane scrollPane = new JScrollPane(documentoVisao);
 		
