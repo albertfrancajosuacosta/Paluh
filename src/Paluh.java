@@ -14,17 +14,21 @@ import javax.swing.KeyStroke;
 import java.awt.event.KeyEvent;
 import java.awt.event.InputEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import java.awt.BorderLayout;
 import java.io.File;
+import java.net.URL;
+
 import javax.swing.event.MenuListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import visão.DialogSobre;
 import visão.PdfVisao;
 
-import javax.swing.event.MenuEvent;  
+import javax.swing.event.MenuEvent;
+import java.awt.Toolkit;  
 
 
 
@@ -66,6 +70,8 @@ public class Paluh {
 		
 	
 		frmPaluh = new JFrame();
+		
+		
 		frmPaluh.setVisible(true);
 		frmPaluh.getContentPane().setBackground(new Color(30, 55, 67));
 		frmPaluh.setBackground(new Color(30, 55, 67));

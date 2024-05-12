@@ -1,38 +1,34 @@
 package visão;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.EventQueue;
-
-import javax.swing.ButtonGroup;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import java.awt.BorderLayout;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import javax.swing.JRadioButton;
-import javax.swing.border.LineBorder;
-import javax.swing.text.BadLocationException;
-
-import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
-import java.awt.Rectangle;
-import java.awt.Component;
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import javax.swing.JEditorPane;
 import java.awt.Insets;
-import javax.swing.UIManager;
-import javax.swing.JSplitPane;
-import java.awt.Panel;
-import javax.swing.Box;
+import java.awt.Rectangle;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import javax.swing.BoxLayout;
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JEditorPane;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 
 public class PdfVisao extends JFrame {
 
@@ -41,8 +37,10 @@ public class PdfVisao extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @throws IOException 
+	 * @throws MalformedURLException 
 	 */
-	public PdfVisao() {
+	public PdfVisao(){
 		
 		
 		String conteudoTexto = "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\r\n"
@@ -199,13 +197,24 @@ public class PdfVisao extends JFrame {
 		gbc_painelInferior.gridy = 1;
 		
 		
-
+		URL url= PdfVisao.class.getResource("/Paluh/src/visão/teste.html");
+	
 		
 		JEditorPane documentoVisao = new JEditorPane();
 		documentoVisao.setContentType("text/html");
-		documentoVisao.setText(conteudo1);
-		documentoVisao.setForeground(new Color(0, 0, 0));
-		documentoVisao.setFont(new Font("Tahoma", Font.PLAIN, 11));
+	
+		try {
+			System.out.println(url);
+			documentoVisao.setPage(url);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//documentoVisao.setEditable(true);
+			
+		//documentoVisao.setText(conteudo1);
+		//documentoVisao.setForeground(new Color(0, 0, 0));
+		//documentoVisao.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		documentoVisao.setBackground(new Color(211, 211, 211));
 		
 		
@@ -224,57 +233,6 @@ public class PdfVisao extends JFrame {
 		
 		painelInferior.add(painelOpcoes);
 	
-		//JSplitPane painelInferiorDividido = new JSplitPane(SwingConstants.VERTICAL,true,documentoVisao,painelOpcoes);
-		//painelInferiorDividido.setAlignmentY(Component.CENTER_ALIGNMENT);
-		//painelInferiorDividido.setAlignmentX(Component.CENTER_ALIGNMENT);
-	
-		
-		//documentoVisao.setPreferredSize(new Dimension((int) (painelInferior.getPreferredSize().getWidth()-100), 
-		//								(int)painelInferior.getPreferredSize().getHeight() ));
-		
-		//documentoVisao.setMaximumSize(new Dimension( (int)(painelInferior.getMaximumSize().getWidth()), 
-		//											(int) painelInferior.getMaximumSize().getHeight()  ));
-		
-		
-		//documentoVisao.setMinimumSize(new Dimension( (int) (painelInferior.getMinimumSize().getWidth()-100), 
-													//												(int) painelInferior.getMinimumSize().getHeight()   ));
-		
-		
-		//documentoVisao.setSize(new Dimension( (int) (painelInferior.getSize().getWidth()-100), 
-		//		
-		//										(int) painelInferior.getSize().getHeight() ));
-		
-												//painelOpcoes.setPreferredSize(new Dimension((int) (painelInferior.getPreferredSize().getWidth()-100), 
-				//											(int)painelInferior.getPreferredSize().getHeight() ));
-		
-		
-		//painelOpcoes.setMaximumSize(new Dimension( (int) (painelInferior.getMaximumSize().getWidth()), 
-		//		
-		//											(int) painelInferior.getMaximumSize().getHeight()  ));
-		
-		
-		//painelOpcoes.setMinimumSize(new Dimension( (int) (painelInferior.getMinimumSize().getWidth()), 
-				
-		//														(int) painelInferior.getMinimumSize().getHeight()   ));
-		
-		
-		//painelOpcoes.setSize(new Dimension( (int) (painelInferior.getSize().getWidth()), 
-				
-		//									(int) painelInferior.getSize().getHeight() ));
-		
-		//painelInferior.add(painelInferiorDividido);
-		
-		
-		
-		
-		
-		
-		//painelInferiorDividido.setDividerLocation(0.5);
-		
-		//painelInferiorDividido.setOrientation(SwingConstants.VERTICAL); 
-	
-
-		//painelInferiorDividido.setBackground(new Color(240, 240, 240));
 		
 		
 		
