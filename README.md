@@ -8,17 +8,10 @@ Início 11/05/2024.
 
 Paluh é construído utilizada as seguintes bibliotecas:
 
-1. Estatística
+1.  Interface Gráfica com o Usuário
 
-    - Scipy: <https://docs.scipy.org/doc/scipy/index.html>
+    - Tkinter ttkbootstrap : <https://ttkbootstrap.readthedocs.io/en/latest/>
 
-2.  Interface Gráfica com o Usuário
-
-    - Tkinter: <https://docs.python.org/pt-br/3/library/tkinter.html>
-
-3.  Manipulação de dados
-
-    - Pandas: <https://pandas.pydata.org/>
 
 ## Considerações:
 
@@ -80,9 +73,9 @@ Albert França Josuá Costa
 
 ## Distintivos
 
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![SciPy](https://img.shields.io/badge/SciPy-%230C55A5.svg?style=for-the-badge&logo=scipy&logoColor=%white) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 
 ## Quem é Aluh?
-![aluh](img/aluh.png "aluh logo")
+![aluh](res/aluh.png "aluh logo")
 
