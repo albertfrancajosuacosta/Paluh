@@ -19,7 +19,7 @@ Paluh é uma ferramenta experimental em desenvolvimento. Não há garantias sobr
 
 ## Funcionalidades em implantação:
 
-1. Teste de normalidade por Shapiro-Wilk
+1. Txxxx
     - <b><s>Início: 30/04/2024-Fim: 03/05/2024.</s></b>
 
 
