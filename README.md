@@ -11,7 +11,7 @@ Paluh é construído utilizada as seguintes bibliotecas:
 1.  Interface Gráfica com o Usuário
     - Tkinter ttkbootstrap : <https://ttkbootstrap.readthedocs.io/en/latest/>
 2.  Manipulação de PDF
-   -  PymuPDF : <https://pymupdf.readthedocs.io/en/latest/>
+   -  PyMuPDF : <https://pymupdf.readthedocs.io/en/latest/>
 
 
 ## Considerações:

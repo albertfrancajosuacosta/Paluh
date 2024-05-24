@@ -154,7 +154,7 @@ class Main_Paluh(ttk.Frame):
         mensagem = "Paluh - Privacidade Aluh tem como objetivo o desenvolvimento de aplicação para a descoberta e anonimização (tarjamento) de dados pessoais em documentos textuais no formato PDF.\n Contato: albertfrancajosuacosta@gmail.com"
 
         percentagemLargura = int((self.util.larguraTela//2)*0.50)
-    
+
         Messagebox.show_info(mensagem, title='Sobre', alert=True, parent=self, position=((self.util.larguraTela//2)+percentagemLargura,self.util.alturaTela//2))
 
 
