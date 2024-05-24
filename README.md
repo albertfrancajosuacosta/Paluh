@@ -2,15 +2,16 @@
 
 ## Início
 
-Privacidade Aluh tem como objetivo o desenvolvimento de aplicativo para a descoberta e anonimização (tarjamento) de dados pessoais em documentos textuais no formato PDF.
+Privacidade Aluh tem como objetivo o desenvolvimento de aplicação para a descoberta e anonimização (tarjamento) de dados pessoais em documentos textuais no formato PDF.
 
 Início 11/05/2024.
 
 Paluh é construído utilizada as seguintes bibliotecas:
 
 1.  Interface Gráfica com o Usuário
-
     - Tkinter ttkbootstrap : <https://ttkbootstrap.readthedocs.io/en/latest/>
+2.  Manipulação de PDF
+   -  PymuPDF : <https://pymupdf.readthedocs.io/en/latest/>
 
 
 ## Considerações:
