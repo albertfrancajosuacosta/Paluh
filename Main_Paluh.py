@@ -1,7 +1,11 @@
 from pathlib import Path
+from tkinter import filedialog
+
 import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 from ttkbootstrap.dialogs import Messagebox
+
+from util.collapsingFrame import CollapsingFrame
 from util.util import Util
 
 
@@ -13,8 +17,11 @@ class Main_Paluh(ttk.Frame):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.caminhoArquivo=""
         self.util = Util()
         self.criarJanela()
+
+
 
     def criarJanela(self):
         x = (self.winfo_screenwidth() // 2) - (self.util.larguraTela // 2)
@@ -70,9 +77,36 @@ class Main_Paluh(ttk.Frame):
         )
         btn.pack(side=LEFT, ipadx=5, ipady=5, padx=0, pady=1)
 
+        #painel Direito
+        # left panel
+        painelDireito = ttk.Frame(self, style='secondary.TFrame')
+        painelDireito.pack(side=RIGHT, fill=Y)
+
+        ## Collapsible arquivo  (collapsible)
+        collapsibleDireito = CollapsingFrame(painelDireito, CAMINHO_IMAGEM)
+        collapsibleDireito.pack(fill=X, pady=1)
+
+        ## container
+        informacoesResultados = ttk.Frame(collapsibleDireito, padding=5)
+        informacoesResultados.columnconfigure(1, weight=2)
+        collapsibleDireito.add(
+            child=informacoesResultados,
+            title='Resultados',
+            bootstyle=PRIMARY)
+
+        ttk.Label(informacoesResultados, text='Endereço:').grid(row=0, column=0, sticky=W, pady=2)
+        ttk.Label(informacoesResultados,textvariable='caminhoArquivo').grid(row=0, column=1, sticky=EW, padx=5, pady=2)
+
+        #self.enderecoArquivo.grid(row=0, column=1, sticky=EW, padx=5, pady=2)
+
+        #self.labelEnderecoArquivo = ttk.Label(painelDireito, text='Endereço:')
+        #self.labelEnderecoArquivo.grid(row=0, column=0, sticky=W, pady=2)
+
+        '''
         # painel central
         painelCentral = ttk.Frame(self, padding=(1, 1), bootstyle="light")
         painelCentral.pack(side=TOP, fill=BOTH, expand=YES)
+
 
         textoSelecioneTeste = "Selecione o teste"
         self.frameSelecioneTeste = ttk.Labelframe(painelCentral, text=textoSelecioneTeste, bootstyle="dark")
@@ -132,7 +166,7 @@ class Main_Paluh(ttk.Frame):
         botaoTesteHipoteseNaoParametricoMais2Grupos.place(x=250, y=230)
 
         self.frameSelecioneTeste.pack_forget()
-
+    '''
     def openJanelaHipoteseParametricoMais2Grupos(self):
         pass
     def openJanelaHipoteseNaoParametricoMais2Grupos(self):
@@ -148,7 +182,12 @@ class Main_Paluh(ttk.Frame):
         pass
 
     def showAbrirArquivo(self):
-        self.frameSelecioneTeste.pack(fill=BOTH, expand=YES, anchor=N)
+        #self.frameSelecioneTeste.pack(fill=BOTH, expand=YES, anchor=N)
+
+        self.caminhoArquivo = filedialog.askopenfilename(title="Selecione o arquivo", filetypes=[("PDF Files", "*.pdf")])
+        self.setvar('caminhoArquivo', self.caminhoArquivo)
+
+        print(self.caminhoArquivo)
 
     def showSobre(self):
         mensagem = "Paluh - Privacidade Aluh tem como objetivo o desenvolvimento de aplicação para a descoberta e anonimização (tarjamento) de dados pessoais em documentos textuais no formato PDF.\n Contato: albertfrancajosuacosta@gmail.com"
