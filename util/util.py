@@ -14,7 +14,7 @@ class Util:
          self.corBorda = "#b4cffa"
          self.corFundoResultado = "#D9DDDC"
          self.versao_0_1 = '0.1'
-
+         self.dpi=80
 
          self.CAMINHO_IMAGEM = Path(__file__).parent.parent / 'res'
 
